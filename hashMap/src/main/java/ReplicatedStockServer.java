@@ -69,9 +69,6 @@ public class ReplicatedStockServer extends ReceiverAdapter {
         }
     }
 
-    /**
-     * Set a stock if it's value equal to ref
-     */
     public void _compareAndSwap(String name, double reference, double newValue) {
         synchronized (stocks) {
             Double val = stocks.get(name);
@@ -84,9 +81,6 @@ public class ReplicatedStockServer extends ReceiverAdapter {
         }
     }
 
-    /**
-     * Compare value and swap it if value by key == reference value
-     */
     private void compareAndSwap() throws Exception {
         String key = readString("key");
         String referenceValue = readString("referenceValue");
